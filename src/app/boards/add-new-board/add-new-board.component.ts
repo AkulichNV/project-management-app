@@ -6,6 +6,7 @@ import { AddNewBoardDialogComponent } from '../add-new-board-dialog/add-new-boar
 import { Board } from '../board.model';
 
 export interface DialogData {
+  edit: boolean;
   title: string;
   description: string;
 }
@@ -39,7 +40,7 @@ export class AddNewBoardComponent implements OnInit, OnDestroy {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddNewBoardDialogComponent, {
       width: '250px',
-      data: {title: this.boardTitle, description: this.boardDescription}
+      data: {title: this.boardTitle, description: this.boardDescription, edit: false}
     });
 
     dialogRef.afterClosed().subscribe(result => {

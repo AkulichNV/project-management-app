@@ -9,7 +9,7 @@ import { DialogData } from '../add-new-board/add-new-board.component';
 })
 export class AddNewBoardDialogComponent {
   id!: number;
-  editMode = false;
+  editMode = this.data.edit;
 
   constructor(
     public dialogRef: MatDialogRef<AddNewBoardDialogComponent>,

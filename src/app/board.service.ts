@@ -8,6 +8,7 @@ import { Task } from "./boards/task.model";
 export class BoardService {
   boardSelected = new EventEmitter<Board>();
   boardsChanged = new Subject<Board[]>();
+  boardChanged = new Subject<Board>();
   startedEditing = new Subject<number>();
 
   private boards: Board[] = [
@@ -135,6 +136,13 @@ export class BoardService {
     this.boards.push(board);
     this.boardsChanged.next(this.boards.slice());
     // console.log(this.boards);
+  }
+
+  updateBoard(id: string, newBoard: Board) {
+    const board = this.boards.find(el => el.idBoard === id);
+    const index = this.boards.indexOf(board!); // refactor?
+    this.boards[index] = newBoard;
+    this.boardsChanged.next(this.boards.slice());
   }
 
   deleteBoard(id: string) {

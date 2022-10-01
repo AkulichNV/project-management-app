@@ -1,22 +1,22 @@
 <div class="col-md-3">
   <div class="card text-center"
     style="width: 18rem;"
-    matTooltip="{{ board.descriptionBoard }}"
+    matTooltip="{{ board?.descriptionBoard }}"
     tooltipEvent="hover"
     >
     <div class="card-body">
       <div class="wrap"
-      [ngStyle]="{'background-image': 'url(' + board.imagePath + ')', 'height': '100%'}">
+      [ngStyle]="{'background-image': 'url(' + board?.imagePath + ')', 'height': '100%'}">
         <a
         style="cursor: pointer;"
           [routerLink]="[id]"
           class="list-group-item clearfix"
         >
-          <h3 class="list-group-item-heading">{{ board.titleBoard }}</h3>
+          <h3 class="list-group-item-heading">{{ board?.titleBoard }}</h3>
         </a>
           <div class="d-flex justify-content-between edit-btn">
             <button type="button" class="btn"><mat-icon>settings</mat-icon></button>
-            <button type="button" class="btn"><mat-icon> border_color</mat-icon></button>
+            <button type="button" class="btn" (click)="onEditItem()"><mat-icon> border_color</mat-icon></button>
             <button type="button" class="btn" (click)="onDelete()"><mat-icon>delete</mat-icon></button>
           </div>
 
