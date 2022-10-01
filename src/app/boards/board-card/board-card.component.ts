@@ -10,11 +10,16 @@ import { Board } from '../board.model';
 export class BoardCardComponent implements OnInit {
   @Input() board!: Board;
   @Input() id!: string;
+  editedItemIndex!: number;
 
   constructor(private boardService: BoardService) { }
 
   ngOnInit(): void {
     // console.log(this.board);
+  }
+
+  onDelete() {
+    this.boardService.deleteBoard(this.id);
   }
 
 }

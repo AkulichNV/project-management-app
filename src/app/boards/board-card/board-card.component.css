@@ -1,7 +1,9 @@
 .card-body {
   height: 200px;
+  padding: 7px;
 }
 a {
+  padding: 20px;
   cursor: pointer;
   height: 100%;
 }

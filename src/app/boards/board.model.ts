@@ -5,7 +5,7 @@ export class Board {
   public idBoard: string;
   public descriptionBoard: string;
   public imagePath: string;
-  public project: Project[];
+  public project?: Project[];
 
   constructor (title: string, id: string, desc: string, imagePath: string, project: Project[]) {
     this.titleBoard = title;

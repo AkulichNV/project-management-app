@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogData } from '../add-new-board/add-new-board.component';
 
 @Component({
@@ -8,6 +8,8 @@ import { DialogData } from '../add-new-board/add-new-board.component';
   styleUrls: ['./add-new-board-dialog.component.css']
 })
 export class AddNewBoardDialogComponent {
+  id!: number;
+  editMode = false;
 
   constructor(
     public dialogRef: MatDialogRef<AddNewBoardDialogComponent>,
@@ -16,6 +18,5 @@ export class AddNewBoardDialogComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 
 }

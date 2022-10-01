@@ -5,13 +5,14 @@
         <h2 class="border-bottom border-info border-3">All Boards</h2>
       </div>
     </div>
-    <div class="col-md-12 d-flex">
+    <div class="row">
       <app-board-card
+      class="col-3"
       *ngFor="let boardEl of boards"
       [board]="boardEl"
       [id]="boardEl.idBoard"
       ></app-board-card>
-      <app-add-new-board></app-add-new-board>
+      <app-add-new-board class="col-3"></app-add-new-board>
     </div>
   </div>
 </div>

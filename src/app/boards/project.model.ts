@@ -3,7 +3,7 @@ import { Task } from "./task.model";
 export class Project {
   public titleProject: string;
   public idProject: string;
-  public task: Task[];
+  public task?: Task[];
 
 
   constructor (title: string, id: string, task: Task[]) {

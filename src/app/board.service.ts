@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 import { Board } from "./boards/board.model";
 import { Project } from "./boards/project.model";
 import { Task } from "./boards/task.model";
@@ -6,6 +7,8 @@ import { Task } from "./boards/task.model";
 @Injectable()
 export class BoardService {
   boardSelected = new EventEmitter<Board>();
+  boardsChanged = new Subject<Board[]>();
+  startedEditing = new Subject<number>();
 
   private boards: Board[] = [
     new Board(
@@ -125,8 +128,20 @@ export class BoardService {
   }
 
   getBoard(id: string) {
-    const b = this.boards.find(el => el.idBoard === id);
-    console.log(b);
-    return b;
+    return this.boards.find(el => el.idBoard === id);
+  }
+
+  addBoard(board: Board) {
+    this.boards.push(board);
+    this.boardsChanged.next(this.boards.slice());
+    // console.log(this.boards);
+  }
+
+  deleteBoard(id: string) {
+    const board = this.boards.find(el => el.idBoard === id);
+    const index = this.boards.indexOf(board!);
+    // console.log(index);
+    this.boards.splice(index, 1);
+    this.boardsChanged.next(this.boards.slice());
   }
 }
