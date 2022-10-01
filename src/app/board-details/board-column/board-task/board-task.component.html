@@ -1,0 +1,19 @@
+<div class="row border border-info rounded-3 d-flex justify-content-between task-box">
+
+  <h5 class="col-8">{{ task.titleTask }}</h5>
+  <div class="col-3 btn-edit">
+    <button class="btn btn-icon"><mat-icon> border_color</mat-icon></button>
+    <button class="btn btn-icon"><mat-icon>delete</mat-icon></button>
+  </div>
+
+  <div class="col-1 border border-info rounded-pill bg-info exec-box"
+    matTooltip="{{ task.executor | titlecase }}"
+    tooltipEvent="hover"
+  >
+    {{ task.executor | slice:0:1 | titlecase }}
+  </div>
+  <div class="row">
+    <p>{{ task.descriptionTask }}</p>
+  </div>
+
+</div>

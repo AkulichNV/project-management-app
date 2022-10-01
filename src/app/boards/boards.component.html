@@ -1,0 +1,17 @@
+<div class="container boards-page">
+  <div class="row">
+    <div class="col-12" style="padding-bottom: 20px;">
+      <div class="col-2">
+        <h2 class="border-bottom border-info border-3">All Boards</h2>
+      </div>
+    </div>
+    <div class="col-md-12 d-flex">
+      <app-board-card
+      *ngFor="let boardEl of boards"
+      [board]="boardEl"
+      [id]="boardEl.idBoard"
+      ></app-board-card>
+      <app-add-new-board></app-add-new-board>
+    </div>
+  </div>
+</div>

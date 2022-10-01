@@ -1,0 +1,25 @@
+<div class="container board-cover">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="border-bottom border-info border-3">Board: {{ board?.titleBoard }}</h2>
+      <p>{{ board?.descriptionBoard }}</p>
+
+      <div class="row">
+        <app-board-column
+        class="col-3"
+        *ngFor="let col of board?.project"
+        [col]="col"
+        ></app-board-column>
+
+        <button
+          type="button"
+          class="col-3 btn btn-light border border-info border-3 border-info-add"
+          mat-raised-button
+
+        >
+          <mat-icon>add</mat-icon> Create a new project
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

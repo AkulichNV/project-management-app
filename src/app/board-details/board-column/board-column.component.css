@@ -1,0 +1,19 @@
+.btn-edit-top {
+  padding: 0;
+  text-align: center;
+}
+mat-icon {
+  height: 15px;
+  width: 15px;
+}
+.material-icons {
+  font-size: 15px;
+}
+.btn-icon {
+  --bs-btn-padding-x: 0.35rem;
+  --bs-btn-padding-y: 0.175rem;
+}
+.project-box {
+  margin: 10px 0px;
+  padding: 10px;
+}

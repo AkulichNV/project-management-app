@@ -1,0 +1,16 @@
+<div>
+  <h3 mat-dialog-title>Create a new board</h3>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.title" placeholder="Board title">
+  </mat-form-field>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="data.description" placeholder="Description"></textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  </div>
+</div>
+

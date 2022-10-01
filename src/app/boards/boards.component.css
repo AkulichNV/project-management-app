@@ -1,0 +1,16 @@
+.boards-page {
+  background-image: linear-gradient(to bottom right, #ffffff, #f7f6ff);
+  border-radius: 0px 0px 40px 40px;
+  padding: 20px 40px 40px 60px;
+}
+h2 {
+  padding-bottom: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to left,
+      #0dcaf0,
+      rgba(0, 0, 0, 0)
+    )  0 0 20 0;
+}

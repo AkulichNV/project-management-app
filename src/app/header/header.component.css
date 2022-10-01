@@ -1,0 +1,8 @@
+.navbar {
+  background-image: linear-gradient(to right, #ffffff, #f7f6ff);
+  border-radius: 40px 40px 0px 0px;
+  padding: 20px 40px 0 40px;
+}
+a.active {
+  border-bottom: 3px solid #0dcaf0;
+}

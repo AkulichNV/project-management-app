@@ -1,0 +1,8 @@
+.btn {
+  width: 18rem;
+  height: 200px;
+  /* border-style: dashed; */
+}
+.border-info {
+  border-style: dotted !important;
+}

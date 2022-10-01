@@ -1,0 +1,7 @@
+.cover {
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
+  background-image: linear-gradient(to bottom right, #f0c3fd, #8c70fd);
+  overflow-x: hidden;
+  /* height: 100%; */
+}

@@ -1,0 +1,7 @@
+<div class="border border-info rounded d-flex flex-column justify-content-end align-items-end"
+*ngFor="let boardEl of boardM">
+  <!-- [ngStyle]="{'background-image': 'url(' + board.imagePath + ')'}" -->
+  <h4 class="title-board">{{ boardEl.title }}</h4>
+  <!-- <h4>All boards menu</h4> -->
+  <button class="btn btn-icon"><mat-icon>delete</mat-icon></button>
+</div>
