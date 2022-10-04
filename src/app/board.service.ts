@@ -148,16 +148,37 @@ export class BoardService {
   deleteBoard(id: string) {
     const board = this.boards.find(el => el.idBoard === id);
     const index = this.boards.indexOf(board!);
-    // console.log(index);
     this.boards.splice(index, 1);
     this.boardsChanged.next(this.boards.slice());
   }
 
   addColumn(idB: string, projectB: Project) {
     const board = this.boards.find(el => el.idBoard === idB);
-    const bp = board?.project;
-    const newB = bp?.push(projectB);
-    // this.boards.push(board);
+    board?.project!.push(projectB);
     this.boardsChanged.next(this.boards.slice());
   }
+
+  updateColumn(idP: string, newProject: Project) {
+    const id = idP.split('-')[0];
+    const board = this.boards.find(el => el.idBoard === id);
+    const projectArr = board?.project;
+    const projectUp = projectArr?.find(el => el.idProject === idP);
+    const indexB = this.boards.indexOf(board!);
+    const indexP = this.boards[indexB].project!.indexOf(projectUp!);
+    // console.log(this.boards[indexB].project![indexP]);
+    this.boards[indexB].project![indexP] = newProject;
+    this.boardsChanged.next(this.boards.slice());
+  }
+
+  deleteColumn(idP: string) {
+    const id = idP.split('-')[0];
+    const board = this.boards.find(el => el.idBoard === id);
+    const projectArr = board?.project;
+    const projectUp = projectArr?.find(el => el.idProject === idP);
+    const indexB = this.boards.indexOf(board!);
+    const indexP = this.boards[indexB].project!.indexOf(projectUp!);
+    board?.project!.splice(indexP, 1);
+    this.boardsChanged.next(this.boards.slice());
+  }
+
 }
