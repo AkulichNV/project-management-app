@@ -152,4 +152,12 @@ export class BoardService {
     this.boards.splice(index, 1);
     this.boardsChanged.next(this.boards.slice());
   }
+
+  addColumn(idB: string, projectB: Project) {
+    const board = this.boards.find(el => el.idBoard === idB);
+    const bp = board?.project;
+    const newB = bp?.push(projectB);
+    // this.boards.push(board);
+    this.boardsChanged.next(this.boards.slice());
+  }
 }

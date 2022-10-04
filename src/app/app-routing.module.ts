@@ -7,12 +7,13 @@ import { HomeComponent } from "./home/home.component";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'boards', component: BoardsComponent, children: [
-    // { path: ':id', component: BoardDetailsComponent },
+  { path: 'boards', children: [
+    { path: '', component: BoardsComponent },
+    { path: ':id', component: BoardDetailsComponent },
     // { path: 'new', component: RecipeEditComponent },
     // { path: ':id/edit', component: RecipeEditComponent },
   ] },
-  { path: 'boards/:id', component: BoardDetailsComponent },
+  // { path: 'boards/:id', component: BoardDetailsComponent },
 ];
 
 @NgModule({

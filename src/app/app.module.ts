@@ -20,6 +20,8 @@ import { AllBoardsMenuComponent } from './board-details/all-boards-menu/all-boar
 import { BoardColumnComponent } from './board-details/board-column/board-column.component';
 import { BoardTaskComponent } from './board-details/board-column/board-task/board-task.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AddNewColumnComponent } from './board-details/add-new-column/add-new-column.component';
+import { AddNewColumnDialogComponent } from './board-details/add-new-column-dialog/add-new-column-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AppRoutingModule } from './app-routing.module';
     AddNewBoardDialogComponent,
     AllBoardsMenuComponent,
     BoardColumnComponent,
-    BoardTaskComponent
+    BoardTaskComponent,
+    AddNewColumnComponent,
+    AddNewColumnDialogComponent
   ],
   imports: [
     BrowserModule,

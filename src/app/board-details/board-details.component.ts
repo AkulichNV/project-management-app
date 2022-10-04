@@ -16,7 +16,7 @@ export class BoardDetailsComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.id);
+    // console.log(this.id);
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -24,7 +24,7 @@ export class BoardDetailsComponent implements OnInit {
           this.board = this.boardService.getBoard(this.id);
         }
       );
-    console.log(this.id);
+    // console.log(this.id);
   }
 
 

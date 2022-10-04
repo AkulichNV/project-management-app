@@ -12,7 +12,7 @@ export class BoardColumnComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   console.log(this.col);
+  //  console.log(this.col);
   }
 
 }
