@@ -135,7 +135,6 @@ export class BoardService {
   addBoard(board: Board) {
     this.boards.push(board);
     this.boardsChanged.next(this.boards.slice());
-    // console.log(this.boards);
   }
 
   updateBoard(id: string, newBoard: Board) {
@@ -152,32 +151,58 @@ export class BoardService {
     this.boardsChanged.next(this.boards.slice());
   }
 
-  addColumn(idB: string, projectB: Project) {
+  addColumn(idB: string, newProject: Project) {
     const board = this.boards.find(el => el.idBoard === idB);
-    board?.project!.push(projectB);
+    board?.project!.push(newProject);
     this.boardsChanged.next(this.boards.slice());
   }
 
-  updateColumn(idP: string, newProject: Project) {
-    const id = idP.split('-')[0];
-    const board = this.boards.find(el => el.idBoard === id);
+  updateColumn(idB: string, idP: string, newProject: Project) {
+    const board = this.boards.find(el => el.idBoard === idB);
     const projectArr = board?.project;
     const projectUp = projectArr?.find(el => el.idProject === idP);
     const indexB = this.boards.indexOf(board!);
     const indexP = this.boards[indexB].project!.indexOf(projectUp!);
-    // console.log(this.boards[indexB].project![indexP]);
     this.boards[indexB].project![indexP] = newProject;
     this.boardsChanged.next(this.boards.slice());
   }
 
-  deleteColumn(idP: string) {
-    const id = idP.split('-')[0];
-    const board = this.boards.find(el => el.idBoard === id);
+  deleteColumn(idB: string, idP: string) {
+    const board = this.boards.find(el => el.idBoard === idB);
     const projectArr = board?.project;
     const projectUp = projectArr?.find(el => el.idProject === idP);
     const indexB = this.boards.indexOf(board!);
     const indexP = this.boards[indexB].project!.indexOf(projectUp!);
     board?.project!.splice(indexP, 1);
+    this.boardsChanged.next(this.boards.slice());
+  }
+
+  addTask(idB:string, idP: string, newTask: Task) {
+    const board = this.boards.find(el => el.idBoard === idB);
+    const projectAdd = board?.project!.find(el => el.idProject === idP);
+    projectAdd?.task?.push(newTask);
+    this.boardsChanged.next(this.boards.slice());
+  }
+
+  updateTask(idB:string, idP: string, idT: string, newTask: Task) {
+    const board = this.boards.find(el => el.idBoard === idB);
+    const projectF = board?.project!.find(el => el.idProject === idP);
+    const task = projectF?.task!.find(el => el.idTask === idT);
+    const indexB = this.boards.indexOf(board!);
+    const indexP = this.boards[indexB].project!.indexOf(projectF!);
+    const indexT = this.boards[indexB].project![indexP].task!.indexOf(task!);
+    this.boards[indexB].project![indexP].task![indexT] = newTask;
+    this.boardsChanged.next(this.boards.slice());
+  }
+
+  deleteTask(idB:string, idP: string, idT: string) {
+    const board = this.boards.find(el => el.idBoard === idB);
+    const projectF = board?.project!.find(el => el.idProject === idP);
+    const task = projectF?.task!.find(el => el.idTask === idT);
+    const indexB = this.boards.indexOf(board!);
+    const indexP = this.boards[indexB].project!.indexOf(projectF!);
+    const indexT = this.boards[indexB].project![indexP].task!.indexOf(task!);
+    this.boards[indexB].project![indexP].task!.splice(indexT, 1);
     this.boardsChanged.next(this.boards.slice());
   }
 

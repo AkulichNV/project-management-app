@@ -1,0 +1,39 @@
+<form>
+  <h3 mat-dialog-title>Create a new task</h3>
+  <mat-form-field>
+    <input
+    matInput
+    name="title"
+    required
+    [(ngModel)]="data.title"
+    placeholder="Task title">
+  </mat-form-field>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <textarea
+      matInput
+      name="description"
+      required
+      [(ngModel)]="data.description"
+      placeholder="Description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+      matInput
+      name="executor"
+      required
+      [(ngModel)]="data.executor"
+      placeholder="Executor">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button
+      [mat-dialog-close]="data"
+      type="submit"
+      [disabled]="!data.title"
+    >{{ editMode ? 'Update' : 'Create' }}</button>
+  </div>
+</form>
+

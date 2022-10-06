@@ -2,8 +2,8 @@
 
   <h5 class="col-8">{{ task.titleTask }}</h5>
   <div class="col-3 btn-edit">
-    <button class="btn btn-icon"><mat-icon> border_color</mat-icon></button>
-    <button class="btn btn-icon"><mat-icon>delete</mat-icon></button>
+    <button class="btn btn-icon" (click)="onEditItem()"><mat-icon> border_color</mat-icon></button>
+    <button class="btn btn-icon" (click)="onDelete()"><mat-icon>delete</mat-icon></button>
   </div>
 
   <div class="col-1 border border-info rounded-pill bg-info exec-box"

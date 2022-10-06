@@ -9,11 +9,8 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'boards', children: [
     { path: '', component: BoardsComponent },
-    { path: ':id', component: BoardDetailsComponent },
-    // { path: 'new', component: RecipeEditComponent },
-    // { path: ':id/edit', component: RecipeEditComponent },
-  ] },
-  // { path: 'boards/:id', component: BoardDetailsComponent },
+    { path: ':id', component: BoardDetailsComponent }
+  ] }
 ];
 
 @NgModule({

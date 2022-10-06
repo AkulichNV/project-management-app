@@ -22,6 +22,8 @@ import { BoardTaskComponent } from './board-details/board-column/board-task/boar
 import { AppRoutingModule } from './app-routing.module';
 import { AddNewColumnComponent } from './board-details/add-new-column/add-new-column.component';
 import { AddNewColumnDialogComponent } from './board-details/add-new-column-dialog/add-new-column-dialog.component';
+import { AddNewTaskComponent } from './board-details/board-column/add-new-task/add-new-task.component';
+import { AddNewTaskDialogComponent } from './board-details/board-column/add-new-task-dialog/add-new-task-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { AddNewColumnDialogComponent } from './board-details/add-new-column-dial
     BoardColumnComponent,
     BoardTaskComponent,
     AddNewColumnComponent,
-    AddNewColumnDialogComponent
+    AddNewColumnDialogComponent,
+    AddNewTaskComponent,
+    AddNewTaskDialogComponent
   ],
   imports: [
     BrowserModule,

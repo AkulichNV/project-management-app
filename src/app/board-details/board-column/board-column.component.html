@@ -11,8 +11,11 @@
 
   <app-board-task
   *ngFor="let task of col.task"
+  [project]="col"
   [task]="task">
   </app-board-task>
 
-  <button class="btn col-12">+Add new task</button>
+  <app-add-new-task
+  [project]="col"
+  ></app-add-new-task>
 </div>
